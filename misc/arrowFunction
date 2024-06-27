@@ -1,0 +1,36 @@
+//O que é uma Arrow function?
+//Primeiramente devemos entender que para se escrever uma função necessitamos da seguinte formula
+
+function Bye(){
+	console.log("Bye")
+}
+
+Bye()
+
+//Porem, de acordo com as aulas de orientação a objetos, também podemos escrever uma função através de uma constante
+
+const hello = function(){
+	console.log("Hello")
+}
+
+console.log(hello)
+
+//Para melhorar a escrita acima podemos utilizar a tão famosa arrow function que simplifica a maneira de se escrever o mesmo código acima
+
+const Ola = () => console.log("Olá")
+
+Ola()
+
+//podemos utilizar com parametros também
+
+const ola = (nome) => console.log(nome)
+
+ola("Pedro")
+
+//porem ao se adicionar mais de um parametro, é necessario incluir {} após =>
+
+const opa = (nome, idade) => {console.log(nome), console.log(idade)}
+
+opa("Pedro", 26)
+
+//continuo amanha em https://www.youtube.com/watch?v=fRRRkognpOs&t=285s
