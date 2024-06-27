@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body{
+            background-color: rgb(146, 206, 214);
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 32px;
+        }
+        div{
+            margin-top: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <input type="number" id="velocidade">
+    <input type="button" value="confirmar" onclick="velocidade()">
+    <div id="resposta"></div>
+    <div id="multa"></div>
+
+    <script>
+        function velocidade() {
+            let velocidade = window.document.getElementById('velocidade');
+            let resposta = window.document.getElementById('resposta');
+            let velNumber = Number(velocidade.value);
+            let multa = window.document.getElementById('multa');
+            resposta.innerHTML = `Sua velocidade é de ${velNumber}km/h`;
+
+            if(velNumber > 100){
+                multa.innerHTML = `como sua velocidade foi de ${velNumber}km/h, voce foi multado`
+            }
+            if(velNumber = 100){
+                multa.innerHTML = `calma la meu parceiro, ${velNumber}km/h é o limite do limite`
+            }
+            else{
+                multa.innerHTML = `como sua velocidade foi de ${velNumber}km/h, voce não foi multado`
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+- toString transforma de numero pra string tipo somatoriaN.toString() ou String(somatoriaN)
+- Number.parseInt() ou Number.parseFloat() para transformar de string para numero 
+-->

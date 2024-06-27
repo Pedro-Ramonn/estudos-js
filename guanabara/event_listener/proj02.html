@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Projetoso</title>
+    <style>
+        body {
+            background-color: rgb(81, 145, 170);
+            font: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(32, 32, 32);
+        }
+        div {
+            font-size: 32px;
+            background-color: green;
+            line-height: 200px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="cubo">Clica aqui!</div>
+
+    <script>
+        let cubo = window.document.getElementById('cubo');
+        
+        cubo.addEventListener('click', cliqueUm);
+        cubo.addEventListener('click', cliqueDois);
+        cubo.addEventListener('click', cliqueTres);
+        cubo.addEventListener('click', cliqueQuatro); 
+
+        function cliqueUm() {
+            cubo.innerText = 'agora aqui!';
+            cubo.style.marginTop = '200px';
+            cubo.style.marginLeft = '200px';
+            cubo.style.backgroundColor = 'orange';
+            
+        };
+        function cliqueDois() {
+            cubo.innerText = 'agora aqui!!'
+            cubo.style.marginTop = '300px';
+            cubo.style.marginLeft = '100px';
+            cubo.style.backgroundColor = 'purple';
+        };
+        function cliqueTres() {
+            cubo.innerText = 'agora aqui!!!'
+            cubo.style.marginTop = '400px';
+            cubo.style.marginLeft = '500px';
+            cubo.style.backgroundColor = 'yellow';
+        };
+        function cliqueQuatro() {
+            cubo.innerText = 'acabou!'
+            cubo.style.marginTop = '100px';
+            cubo.style.marginLeft = '200px';
+            cubo.style.backgroundColor = 'red';
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+- toString transforma de numero pra string tipo somatoriaN.toString() ou String(somatoriaN)
+- Number.parseInt() ou Number.parseFloat() para transformar de string para numero 
+-->

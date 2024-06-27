@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voto</title>
+    <style>
+        body{
+            background-color: rgb(146, 206, 214);
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 32px;
+        }
+        div{
+            margin-top: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jurisdição de Voto</h1>
+    <input type="number" id="idade">
+    <input type="button" value="confirmar" onclick="idade()">
+    <div id="resposta"></div>
+    <div id="voto"></div>
+
+    <script>
+        function idade() {
+            let idade = window.document.getElementById('idade');
+            let resposta = window.document.getElementById('resposta');
+            let idadeNumber = Number(idade.value);
+            let voto = window.document.getElementById('voto');
+            resposta.innerHTML = `Sua idade é de ${idadeNumber} anos`;
+
+            if(idadeNumber < 16){
+                voto.innerHTML = `com ${idadeNumber} anos não se pode votar`;
+            } else if(idadeNumber < 18 || idadeNumber > 65){
+                voto.innerHTML = `com ${idadeNumber} anos o voto não é obrigatório`;
+            } else if(idadeNumber >= 18){
+                voto.innerHTML = `com ${idadeNumber} anos o voto é obrigatório`;
+            }
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+- toString transforma de numero pra string tipo somatoriaN.toString() ou String(somatoriaN)
+- Number.parseInt() ou Number.parseFloat() para transformar de string para numero 
+-->
