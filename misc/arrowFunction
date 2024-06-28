@@ -33,4 +33,18 @@ const opa = (nome, idade) => {console.log(nome), console.log(idade)}
 
 opa("Pedro", 26)
 
-//continuo amanha em https://www.youtube.com/watch?v=fRRRkognpOs&t=285s
+//utilizando arrow functions com map, filter e reduce
+
+const numbers = [1,2,3,4,5,6];
+
+const map1 = numbers.map((x) => x * 2); //a função map() MAPEIA o array escolhido e executa alguma função que pedimos e nos retorna um novo array em ordem;
+console.log(map1);
+
+const filtrandoPar = numbers.filter((x) => x % 2 === 0 ) //a função filter() FILTRA os valores dentro do array de acordo com a função passada após a =>;
+console.log(filtrandoPar);
+
+const total = numbers.reduce((accumulator, x) => accumulator + x) //reduce() pega todos os valores do array e realixa alguma função com eles, sempre se utiliza o accumulator
+																  // para acumular o valor anteriormente recebido
+
+console.log(total)							
+
