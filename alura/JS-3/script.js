@@ -2,23 +2,32 @@
 
 const containerVideos = window.document.querySelector(".videos__container");
 
-const api = fetch("http://localhost:3000/videos") //maneira em que se busca(fetch) uma API
-.then(res => (res).json()) 
-.then((videos) => //pego todos os videos que vieram da API e uso o parametro videos para nomear esses dados que eu recebi
-    videos.forEach((video) => {  //agora utilizo um forEach() porque PARA CADA video que eu receber, quero atribuir uma função a eles
-        containerVideos.innerHTML +=
-        `
-        <li class="videos__item">
-            <iframe src="${video.url}" title="${video.titulo}" frameborder="0" allowFullscreen></iframe>
-            <div class="descricao-video">
-                <img class="img-canal" src="${video.imagem}" alt="logo do canal">
-                <h3 class="titulo-video">${video.titulo}</h3>
-                <p class="titulo-canal">${video.descricao}</p>
-            </div>          
-        </li>
-        `;
-    })   //nesse caso, quero que para cada item dentro do forEach() ele adicione no HTML atraves do innerHTML essa seção com o <li></li>
-)
-.catch((error) => {
-    containerVideos.innerHTML = `<p> Houve um erro ao carregar os vídeos: ${error}</p>`
-})
+async function chamandoVideos(){
+    try{ //utilizado para TENTAR executar o código que está dentro dele, caso não consiga, é jogado par o catch
+        const api = await fetch("http://localhost:3000/videos") //maneira em que se busca(fetch) uma API
+        const videos = await api.json();
+            videos.forEach((video) => {  //agora utilizo um forEach() porque PARA CADA video que eu receber, quero atribuir uma função a eles
+                if(video.categoria == ""){
+                    throw new Error('Vídeo não tem categoria');
+                }
+                containerVideos.innerHTML +=
+                `
+                <li class="videos__item">
+                    <iframe src="${video.url}" title="${video.titulo}" frameborder="0" allowFullscreen></iframe>
+                    <div class="descricao-video">
+                        <img class="img-canal" src="${video.imagem}" alt="logo do canal">
+                        <h3 class="titulo-video">${video.titulo}</h3>
+                        <p class="titulo-canal">${video.descricao}</p>
+                    </div>          
+                </li>
+                `;
+            })   //nesse caso, quero que para cada item dentro do forEach() ele adicione no HTML atraves do innerHTML essa seção com o <li></li>
+    } catch(error){ //resposta para uma tentativa falha do try, neste caso utilizaremos como um erro
+        containerVideos.innerHTML = `<p> Houve um erro ao carregar os vídeos: ${error}</p>`
+    }
+    finally{
+        //utilizado apos o try catch e sempre será executado independentemente se passou pelo try ou pelo catch
+    }
+}
+
+chamandoVideos();
