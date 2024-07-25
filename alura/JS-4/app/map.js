@@ -7,3 +7,29 @@ function aplicarDesconto(livros) {
 }
 
 //MAP NECESSITA DE RETURN POIS ELE RETORNA UM NOVO ARRAY BASEADO NO ARRAY ORIGINAL
+
+/* pessoas = [{
+    pessoa1 : {
+        nome : 'pedro',
+        idade : 26,
+        altura: 176,
+    },
+    pessoa2 : {
+        nome : 'lucas',
+        idade : 23,
+        altura: 180,
+    },
+    pessoa3 : {
+        nome : 'marcos',
+        idade : 20,
+        altura: 150,
+    },
+}]
+
+console.log(pessoas)
+
+const alturaMaior = 10
+novaAltura = pessoas.map(pessoa => {
+    return {...pessoa,altura: pessoa.altura * alturaMaior}
+})
+console.log(novaAltura) */
