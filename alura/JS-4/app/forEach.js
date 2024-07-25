@@ -1,7 +1,8 @@
 const elementoParaInserirLivros = document.getElementById('livros')
 
 function exibirOsLivrosNaTela(listaDeLivros) {
-    listaDeLivros.forEach(livro => {
+  elementoParaInserirLivros.innerHTML = ''
+    listaDeLivros.forEach(livro => { //para cada livro eu incrementarei em 1 a contagem e trarei o livro da seguinte forma
         elementoParaInserirLivros.innerHTML += `
         <div class="livro">
         <img class="livro__imagens" src="${livro.imagem}"
@@ -18,3 +19,5 @@ function exibirOsLivrosNaTela(listaDeLivros) {
         `
     })
 }
+
+//FOREACH NÃO APRESENTA RETURN NO FINAL POIS ELE RETORNA O MESMO ARRAY ORIGINAL
